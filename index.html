@@ -22,6 +22,82 @@
         .animate-rotate {
             animation: rotate 20s linear infinite;
         }
+
+        @keyframes botBob {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-4px); }
+        }
+
+        @keyframes botWave {
+            0%, 100% { transform: rotate(-18deg); }
+            50% { transform: rotate(18deg); }
+        }
+
+        .about-bot {
+            position: absolute;
+            top: -42px;
+            left: 50%;
+            width: 44px;
+            height: 38px;
+            transform: translateX(-50%);
+            animation: botBob 2.4s ease-in-out infinite;
+        }
+
+        .about-bot-head {
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            width: 30px;
+            height: 28px;
+            border: 3px solid #94a3b8;
+            background: #020617;
+            box-shadow: 0 0 0 2px #0f172a inset;
+        }
+
+        .about-bot-head::before,
+        .about-bot-head::after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            background: #e2e8f0;
+            box-shadow: 0 0 8px rgba(226, 232, 240, 0.75);
+        }
+
+        .about-bot-head::before { left: 6px; }
+        .about-bot-head::after { right: 6px; }
+
+        .about-bot-antenna {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            width: 12px;
+            height: 15px;
+            border-top: 4px solid #94a3b8;
+            border-right: 4px solid #94a3b8;
+        }
+
+        .about-bot-arm {
+            position: absolute;
+            right: 0;
+            bottom: 13px;
+            width: 14px;
+            height: 4px;
+            background: #94a3b8;
+            transform-origin: left center;
+            animation: botWave 0.9s ease-in-out infinite;
+        }
+
+        .about-bot-arm::after {
+            content: "";
+            position: absolute;
+            right: -3px;
+            top: -3px;
+            width: 6px;
+            height: 6px;
+            background: #94a3b8;
+        }
     </style>
     <link href="./output.css" rel="stylesheet">
 </head>
@@ -119,7 +195,12 @@
     <section id="about" class="py-24 relative overflow-hidden bg-slate-800/30">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="reveal text-center max-w-3xl mx-auto">
-                <h2 class="text-4xl font-bold mb-6 flex items-center gap-4 justify-center">
+                <h2 class="relative text-4xl font-bold mb-6 flex items-center gap-4 justify-center">
+                    <span class="about-bot" aria-hidden="true">
+                        <span class="about-bot-antenna"></span>
+                        <span class="about-bot-arm"></span>
+                        <span class="about-bot-head"></span>
+                    </span>
                     <span class="w-12 h-1 bg-blue-500"></span>
                     About Me
                 </h2>
