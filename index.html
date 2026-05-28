@@ -89,7 +89,7 @@
         .project-bot {
             position: absolute;
             top: -34px;
-            right: -54px;
+            left: -54px;
             width: 46px;
             height: 34px;
             animation: botBob 2.4s ease-in-out infinite;
@@ -127,12 +127,6 @@
             animation: botWave 0.9s ease-in-out infinite;
         }
 
-        .project-bot-hand.left {
-            left: 0;
-            transform-origin: right center;
-            animation-direction: reverse;
-        }
-
         .project-bot-hand.right {
             right: 0;
             transform-origin: left center;
@@ -147,7 +141,6 @@
             background: #94a3b8;
         }
 
-        .project-bot-hand.left::after { left: -3px; }
         .project-bot-hand.right::after { right: -3px; }
     </style>
     <link href="./output.css" rel="stylesheet">
@@ -308,14 +301,7 @@
 <section id="projects" class="py-24 bg-slate-800/30">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
-            <h2 class="relative inline-flex items-center justify-center text-3xl font-bold mb-2">
-                Projects
-                <span class="project-bot" aria-hidden="true">
-                    <span class="project-bot-hand left"></span>
-                    <span class="project-bot-hand right"></span>
-                    <span class="project-bot-box"></span>
-                </span>
-            </h2>
+            <h2 class="text-3xl font-bold mb-2">Projects</h2>
             <p class="text-slate-500">A collection of my recent work and experiments</p>
         </div>
 
@@ -608,7 +594,13 @@
 
     <section id="contact" class="py-24 bg-slate-800/50">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+            <h2 class="relative inline-flex items-center justify-center text-3xl font-bold mb-8">
+                Get In Touch
+                <span class="project-bot" aria-hidden="true">
+                    <span class="project-bot-hand right"></span>
+                    <span class="project-bot-box"></span>
+                </span>
+            </h2>
             <form class="space-y-4">
                 <div class="grid md:grid-cols-2 gap-4">
                     <input type="text" placeholder="Name" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
