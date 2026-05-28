@@ -15,13 +15,13 @@
         .skill-card:hover { transform: scale(1.05); transition: all 0.3s ease; }
         
         @keyframes orbitSpin {
-            from { transform: rotateX(62deg) rotateZ(0deg); }
-            to { transform: rotateX(62deg) rotateZ(360deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         @keyframes counterSpin {
-            from { transform: rotateZ(0deg) rotateX(-62deg); }
-            to { transform: rotateZ(-360deg) rotateX(-62deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
         }
 
         @keyframes coreFloat {
@@ -43,27 +43,29 @@
             animation: coreFloat 4s ease-in-out infinite;
         }
 
-        .hero-orbit-scene {
-            perspective: 900px;
-            transform-style: preserve-3d;
-        }
-
         .hero-orbit-ring {
-            animation: orbitSpin 22s linear infinite;
+            animation: orbitSpin 28s linear infinite;
+            border: 1px dashed rgba(71, 85, 105, 0.8);
         }
 
         .hero-orbit-ring.reverse {
             animation-direction: reverse;
-            animation-duration: 30s;
+            animation-duration: 34s;
+            border: 1px solid rgba(34, 211, 238, 0.2);
         }
 
         .hero-orbit-badge {
-            animation: counterSpin 22s linear infinite;
+            animation: counterSpin 28s linear infinite;
         }
 
         .hero-orbit-ring.reverse .hero-orbit-badge {
-            animation-duration: 30s;
+            animation-duration: 34s;
             animation-direction: reverse;
+        }
+
+        .hero-orbit-point {
+            width: 3.5rem;
+            height: 3.5rem;
         }
 
         .hero-pulse-ring {
@@ -218,29 +220,27 @@
             <div class="hero-orbit-scene hidden md:flex relative reveal min-h-[520px] items-center justify-center" style="animation-delay: 0.2s;">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.18),transparent_58%)]"></div>
                 <div class="absolute h-80 w-80 rounded-full border border-blue-400/20 hero-pulse-ring"></div>
-                <div class="absolute h-[28rem] w-[28rem] rounded-full border border-dashed border-slate-600/70"></div>
-                <div class="absolute h-[21rem] w-[21rem] rounded-full border border-cyan-400/20"></div>
 
                 <div class="hero-orbit-ring absolute h-[28rem] w-[28rem] rounded-full">
-                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-                        <div class="hero-orbit-badge flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/40 bg-slate-950 shadow-lg shadow-cyan-500/20">
-                            <i class="fab fa-react text-3xl text-cyan-300"></i>
+                    <div class="hero-orbit-point absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                        <div class="hero-orbit-badge flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/40 bg-slate-950 shadow-lg shadow-cyan-500/20">
+                            <i class="fab fa-react text-2xl text-cyan-300"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                        <div class="hero-orbit-badge flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-600 bg-slate-950 shadow-lg shadow-slate-950/50">
-                            <i class="fab fa-github text-3xl text-slate-200"></i>
+                    <div class="hero-orbit-point absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                        <div class="hero-orbit-badge flex h-14 w-14 items-center justify-center rounded-2xl border border-pink-400/40 bg-slate-950 shadow-lg shadow-pink-500/20">
+                            <i class="fab fa-figma text-2xl text-pink-300"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="hero-orbit-ring reverse absolute h-[21rem] w-[21rem] rounded-full">
-                    <div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2">
+                    <div class="hero-orbit-point absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2">
                         <div class="hero-orbit-badge flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-400/40 bg-slate-950 shadow-lg shadow-blue-500/20">
                             <img src="https://cdn.simpleicons.org/typescript/60A5FA" alt="TypeScript" class="h-7 w-7">
                         </div>
                     </div>
-                    <div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="hero-orbit-point absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <div class="hero-orbit-badge flex h-14 w-14 items-center justify-center rounded-2xl border border-teal-400/40 bg-slate-950 shadow-lg shadow-teal-500/20">
                             <img src="https://cdn.simpleicons.org/tailwindcss/5EEAD4" alt="Tailwind CSS" class="h-7 w-7">
                         </div>
