@@ -601,12 +601,15 @@
                     <span class="project-bot-box"></span>
                 </span>
             </h2>
-            <form class="space-y-4">
+            <form action="https://formsubmit.co/umezinwarita464@gmail.com" method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="New portfolio contact message">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
                 <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Name" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
-                    <input type="email" placeholder="Email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                    <input type="text" name="name" placeholder="Name" autocomplete="name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                    <input type="email" name="email" placeholder="Email" autocomplete="email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
                 </div>
-                <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"></textarea>
+                <textarea rows="5" name="message" placeholder="Your Message" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"></textarea>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-bold transition">Send Message</button>
             </form>
 
