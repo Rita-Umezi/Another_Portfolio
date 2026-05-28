@@ -86,28 +86,26 @@
             50% { transform: rotate(18deg); }
         }
 
-        .about-bot {
+        .project-bot {
             position: absolute;
-            top: -30px;
-            right: -52px;
-            width: 44px;
-            height: 38px;
+            top: -34px;
+            right: -54px;
+            width: 46px;
+            height: 34px;
             animation: botBob 2.4s ease-in-out infinite;
         }
 
-        .about-bot-head {
+        .project-bot-box {
             position: absolute;
-            bottom: 0;
-            left: 8px;
-            width: 30px;
-            height: 28px;
+            inset: 4px 8px 0;
             border: 3px solid #94a3b8;
             background: #020617;
+            border-radius: 4px;
             box-shadow: 0 0 0 2px #0f172a inset;
         }
 
-        .about-bot-head::before,
-        .about-bot-head::after {
+        .project-bot-box::before,
+        .project-bot-box::after {
             content: "";
             position: absolute;
             top: 8px;
@@ -117,39 +115,40 @@
             box-shadow: 0 0 8px rgba(226, 232, 240, 0.75);
         }
 
-        .about-bot-head::before { left: 6px; }
-        .about-bot-head::after { right: 6px; }
+        .project-bot-box::before { left: 6px; }
+        .project-bot-box::after { right: 6px; }
 
-        .about-bot-antenna {
+        .project-bot-hand {
             position: absolute;
-            top: 0;
-            left: 28px;
+            top: 15px;
             width: 12px;
-            height: 15px;
-            border-top: 4px solid #94a3b8;
-            border-right: 4px solid #94a3b8;
-        }
-
-        .about-bot-arm {
-            position: absolute;
-            right: 0;
-            bottom: 13px;
-            width: 14px;
             height: 4px;
             background: #94a3b8;
-            transform-origin: left center;
             animation: botWave 0.9s ease-in-out infinite;
         }
 
-        .about-bot-arm::after {
+        .project-bot-hand.left {
+            left: 0;
+            transform-origin: right center;
+            animation-direction: reverse;
+        }
+
+        .project-bot-hand.right {
+            right: 0;
+            transform-origin: left center;
+        }
+
+        .project-bot-hand::after {
             content: "";
             position: absolute;
-            right: -3px;
             top: -3px;
             width: 6px;
             height: 6px;
             background: #94a3b8;
         }
+
+        .project-bot-hand.left::after { left: -3px; }
+        .project-bot-hand.right::after { right: -3px; }
     </style>
     <link href="./output.css" rel="stylesheet">
 </head>
@@ -275,12 +274,7 @@
     <section id="about" class="py-24 relative overflow-hidden bg-slate-800/30">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="reveal text-center max-w-3xl mx-auto">
-                <h2 class="relative text-4xl font-bold mb-6 flex items-center gap-4 justify-center">
-                    <span class="about-bot" aria-hidden="true">
-                        <span class="about-bot-antenna"></span>
-                        <span class="about-bot-arm"></span>
-                        <span class="about-bot-head"></span>
-                    </span>
+                <h2 class="text-4xl font-bold mb-6 flex items-center gap-4 justify-center">
                     <span class="w-12 h-1 bg-blue-500"></span>
                     About Me
                 </h2>
@@ -314,7 +308,14 @@
 <section id="projects" class="py-24 bg-slate-800/30">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
-            <h2 class="text-3xl font-bold mb-2">Projects</h2>
+            <h2 class="relative inline-flex items-center justify-center text-3xl font-bold mb-2">
+                Projects
+                <span class="project-bot" aria-hidden="true">
+                    <span class="project-bot-hand left"></span>
+                    <span class="project-bot-hand right"></span>
+                    <span class="project-bot-box"></span>
+                </span>
+            </h2>
             <p class="text-slate-500">A collection of my recent work and experiments</p>
         </div>
 
